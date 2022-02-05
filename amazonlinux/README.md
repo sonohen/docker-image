@@ -9,7 +9,8 @@ $ docker build --build-arg \
 	user=some_user \
 	pass=some_pass \
 	git_user_name=some_git_user_name \
-	git_user_email=some_git_user_email
+	git_user_email=some_git_user_email \
+	.
 ```
 
 ## Prerequisitions
