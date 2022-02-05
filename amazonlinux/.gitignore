@@ -1,0 +1,4 @@
+ssh/
+*.pem
+aws/credentials
+**/.DS_Store
