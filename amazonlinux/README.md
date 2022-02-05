@@ -37,3 +37,8 @@ Please be aware that this pair can get only when you create IAM user. If you don
 
 3. Check if region setting is proper for you. The default region is `ap-northeast-1`.
 
+## What you can do with this
+ 
+- Access to AWS resources using AWS CLI like: `aws s3 ls`
+- Access to EC2 instances using `ssh` like: `ssh -i udemy-sample1.pem ec2-user@xxx.xxx.xxx.xxx`
+- Write code in Rust and compile them.
