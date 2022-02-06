@@ -68,6 +68,6 @@ RUN rm -f $USER_HOME_DIR/.vimrc && ln -s ./dotfiles/.vimrc $USER_HOME_DIR/.vimrc
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Rust
-RUN curl --proto '=https' --tlsv1.2 https:\/\/sh.rustup.rs -sSf | sh -s -- -y
+RUN curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 
 CMD ["/usr/bin/zsh"]
