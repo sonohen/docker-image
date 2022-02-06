@@ -7,7 +7,6 @@ ARG git_user_email=sonohen55@gmail.com
 
 ENV WORK_DIRECTORY=/tmp/initialize
 ENV AWS_CLI_URL=https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-
 ENV AWS_CLI_FILENAME=awscliv2.zip
 ENV USER_HOME_DIR=/home/$user
 
