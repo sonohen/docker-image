@@ -7,10 +7,15 @@ ARG git_user_email=sonohen55@gmail.com
 
 ENV WORK_DIRECTORY=/tmp/initialize
 ENV AWS_CLI_URL=https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+
 ENV AWS_CLI_FILENAME=awscliv2.zip
 ENV USER_HOME_DIR=/home/$user
 
 WORKDIR /
+
+# Install Node.js repo
+# See https://github.com/nodesource/
+RUN curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -
 
 # Install required packages as root
 RUN yum -y update && yum -y install \
@@ -19,6 +24,7 @@ RUN yum -y update && yum -y install \
 	glibc \
 	groff \
 	less \
+	nodejs \
 	openssh-clients \
 	sudo \
 	tar \
