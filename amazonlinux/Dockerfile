@@ -40,6 +40,9 @@ RUN mkdir -p $WORK_DIRECTORY
 WORKDIR $WORK_DIRECTORY
 RUN curl $AWS_CLI_URL -o $AWS_CLI_FILENAME && unzip $AWS_CLI_FILENAME && ./aws/install
 
+# Create application directory
+RUN mkdir -p /app
+
 # Add user to avoid running the programs as root user
 RUN useradd $user -m -d $USER_HOME_DIR -s /usr/bin/zsh -G wheel -p "$(mkpasswd --method=sha-512 '$pass')"
 USER $user
@@ -75,4 +78,7 @@ RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/inst
 # Install Rust
 RUN curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 
-CMD ["/usr/bin/zsh"]
+# Run Nodejs server
+WORKDIR /app
+
+CMD ["node","server.js"]
